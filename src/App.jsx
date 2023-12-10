@@ -13,13 +13,19 @@ function App() {
   const [items, setitems] = useState(initial);
   const create = () => {
     setitems((prev) => [
-      { task: text, checked: false, id: Date.now() },
-      ...items,
+      ...prev, { task: text, checked: false, id: Date.now() }
     ]);
     settext("");
   };
   const deletethetask = (id) => {
     setitems((prev) => prev.filter((e) => e.id !== id));
+  };
+  const checked = (id) => {
+    setitems((prev) =>
+      prev.map((i) =>
+        i.id === id ? { ...i, checked: !i.checked } : i
+      )
+    );
   };
   const handleEdit = (id, newItemText) => {
     setitems((prevItems) =>
@@ -35,8 +41,8 @@ function App() {
 
   return (
     <>
-      <div className="w-screen min-h-screen bg-yellow-400 p-2">
-        <div className="w-[60%] max-md:w-[90%] min-h-[50vh] bg-white mx-auto flex flex-col p-2 justify-center gap-2 items-center">
+      <div className="w-screen min-h-screen bg-violet-400 p-2">
+        <div className="w-[60%] max-md:w-[100%] min-h-[50vh] bg-white mx-auto flex flex-col p-2 justify-center gap-2 items-center">
           <h1 className="font-bold cursive bg-blue-400 p-2 text-4xl text-center">
             Task Management Application
           </h1>
@@ -68,6 +74,8 @@ function App() {
                 handleEdit={handleEdit}
                 del={deletethetask}
                 check={e.checked}
+                checkf={checked}
+                
               />
             );
           })}
