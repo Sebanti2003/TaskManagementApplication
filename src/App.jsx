@@ -42,8 +42,8 @@ function App() {
   return (
     <>
       <div className="w-screen min-h-screen bg-violet-400 p-2">
-        <div className="w-[60%] max-md:w-[100%] min-h-[50vh] bg-white mx-auto flex flex-col p-2 justify-center gap-2 items-center">
-          <h1 className="font-bold cursive bg-blue-400 p-2 text-4xl text-center">
+        <div className="w-[60%] max-md:w-[100%] bg-white border-[1px] rounded-md border-black min-h-[50vh]  mx-auto flex flex-col p-2 justify-center gap-2 items-center">
+          <h1 className="font-bold cursive  p-2 text-4xl text-center">
             Task Management Application
           </h1>
           <img src={img} className="w-[300px] h-[300px] " alt="" />
@@ -56,7 +56,7 @@ function App() {
               placeholder="Write your task"
             />
             <button
-              className="p-2 px-4 bg-blue-600 rounded-md text-white"
+              className="p-2 w-[30%] px-4 bg-gradient-to-tr from-blue-600 to-slate-100 text-black bg-blue-600 rounded-md border-2 border-black"
               onClick={() => create()}
             >
               Create
