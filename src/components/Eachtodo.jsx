@@ -19,7 +19,7 @@ function Eachtodo({content,del,id,edit,handleEdit,set,setedit,checkf,check}) {
             </p>
           )}
       <div className='flex justify-center items-center'>
-      <FaRegEdit onClick={()=>setedit(id,content)} className='w-7 h-7 hover:text-violet-700 active:text-violet-700 focus:text-violet-700' />
+      <FaRegEdit onClick={()=>setedit(id)} className='w-7 h-7 hover:text-violet-700 active:text-violet-700 focus:text-violet-700' />
       <MdOutlineDeleteForever onClick={()=>del(id)} className='w-8 h-8 hover:text-red-600'/>
       </div>
       
